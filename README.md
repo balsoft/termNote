@@ -13,8 +13,9 @@ You will need to have atleast these things:
 -   `cmake 3.6`
 -   `gcc 7+`
 -   `argp`
--   `libnotify`
--   `catch2`
+
+If you need to build `noted`, you need to have `libnotify` (with headers).
+If you would like to run unit tests, install or download `catch2`.
 
 * * *
 
@@ -30,7 +31,7 @@ trizen -S termNote-git
 ### Nix
 
 ```bash
-nix-shell -p 'import (builtins.fetchGit {url="https://github.com/Terodom/termNote"; ref="master";})'
+nix-shell -p 'import (builtins.fetchGit {url="https://github.com/Terodom/termNote"; ref="master";} {})'
 ```
 
 or
@@ -43,13 +44,13 @@ nix-build
 
 #### Building distribution-independent executables (nix bundles)
 ```bash
-nix-build -A bundles.termNote
-nix-build -A bundles.noted
+nix-build -A bundles.termNote -o termNote
+nix-build -A bundles.noted -o noted
 ```
 
 #### Building AppImages 
 
-**This is currently broken and it takes a long time to build. Build it only if you are ready to create a fix**
+:warning: **This is currently broken and it takes a long time to build as it requires everything to be built with musl. Build it only if you are ready to create a fix**
 
 ```bash
 nix-build -A AppImages.termNote
