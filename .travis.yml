@@ -1,1 +1,5 @@
 language: nix
+script:
+  - nix-build
+  - nix-build -A bundles.termNote -o termNote
+  - nix-build -A bundles.noted -o noted

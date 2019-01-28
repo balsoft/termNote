@@ -6,7 +6,8 @@ let
        url = "https://github.com/matthewbauer/nix-bundle";
        rev = "113d8c6b426b0932a64c58c21cd065baad4c2314";
     };
-    nix-bundle = (import ("${nix-bundle-src}/appimage-top.nix") {}) // (import "${nix-bundle-src}/default.nix" {});
+    nix-bundle = (import ("${nix-bundle-src}/appimage-top.nix") {})
+    // (import "${nix-bundle-src}/default.nix" {});
     AppImages =
     {
         termNote = nix-bundle.appimage

@@ -1,4 +1,4 @@
-{ stdenv, cmake, pkgconfig, lib,
+{ stdenv, cmake, pkgconfig, lib, gcc8,
   notify ? true, libnotify, gdk_pixbuf, pcre,
   test ? true, catch2,
   stripAll ? false,
@@ -7,7 +7,7 @@ stdenv.mkDerivation rec
 {
   name = "termNote";
   src = ./.;
-  nativeBuildInputs = [ cmake pkgconfig ];
+  nativeBuildInputs = [ gcc8 cmake pkgconfig ];
   buildInputs = lib.optionals notify [ libnotify gdk_pixbuf pcre ];
   checkInputs = lib.optionals test [ catch2 ];
   doCheck = test;
