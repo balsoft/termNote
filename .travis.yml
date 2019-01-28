@@ -1,5 +1,15 @@
 language: nix
 script:
-  - nix-build
-  - nix-build -A bundles.termNote -o termNote
-  - nix-build -A bundles.noted -o noted
+- nix-build
+- nix-build -A bundles.termNote -o termNote
+- nix-build -A bundles.noted -o noted
+deploy:
+  provider: releases
+  user: balsoft
+  file:
+  - termNote
+  - noted
+  skip_cleanup: true
+  draft: true
+  password:
+    secure: jTTpvubi7MW/QpePFP5j8c4/QoDFrMWMGl/GRCrvnD6IEM4JL85op8+HWtSM2R5kuzW28ao7HQJ4QDpkGSbnPaKVfynxTlIM/hpZRCAcd0WjhP5lXXqOKBuiPkWfnafCVT5mkyj0sg1cGyy2ulQmlDcCS/pFGkfbawgqseok994K842rwUL/XzX24Fm/93j6HYPApHsnZ3FVJVlwr+OolPeyn7B5AsV19EicYQ6ighaUNfFG4H8fW5cyihlRYVu9bCFCnE8Gfs3GW2r+PRxv4BwCreeLVry/tQUVb2Emrz7Drzz531VHhQbmgT2pnJAzk/C33N6jnOpHqtZVT4h0YPMp9TrFb8WpI7Fel7xeZWvj/ZXPPbdNoY4lZkvSpgOnoMZovQB0wG4H1esJWx7p33pnm6g3BpM8+tNKvk/cB2HYjRSQV2UjixflCISeGmnaXeqTaKHNwvMwJCAVay8IsgnmX1BfTBj6puZ9Nd4SaOL96IisaLqcP5tEB0uf3PoSKWQYqmqolm//gqV7S99tS0CQodqIdiIHfeOl4iYfIKTrfvvfcwigCGrA+bhmn3nxgRkJ3fv6195Q67F0qBlEYbmuJJESOPas3pVh5UYXorITBOMbkwomeLjZZKHYStl45cuO/ewj3jjctkFKyVLlvc4McSNMLfR1nsDq9GX39Xk=
