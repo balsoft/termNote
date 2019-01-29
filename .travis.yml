@@ -8,8 +8,8 @@ deploy:
   api_key:
     secure: ebJ0b8XVrcVSHUe2fNROrquVmgc1rWQt9CnO+JszGWjDAzJ/Xns35oymgZ1ebAgZbvXpMvXHuqQTPeOFZPFiOeGz6d4SoBySYM+y9vEdjPMpLaKfBj2zSqDj/qbf4GZ5INOkR9cWBlVYrDDSnWDC7dAw1MJcwIgRXOHf6ID29qpdnXf8CblL/SVWx+RIHhmr2obUAl4onH251YVJkzF3Uw37dEBN7VLstDgGgGfWyhHeIRU5YkOAtpDL9CxsJNBAdbhgbzJYxby6KUN3g+xaHYOKDgfPLXGMGN9+uWKiPZ6l0Y0DS4LiCWGEzSGdb+KUHJHCz87a+2L6yznzLcO2oeakoVS+5Ommgbw9zrPfhaEVVhgZ0989tA5bujApq1z9sScGiMKMEZSBbFRWJ3bFj9xGSWfN45PXCX1DBNYj56Jz/1SlW/LcQmFwgLVJPbYhU7m8qpBleL5hURi5GCuT6bptcjh+4lRyfiNrlqFGoBbqMfF2+03xlMjDi7TXv5iCESHpshah040eon7LKoKqF4TremplKdQR+owxp0zAYOtM7x+kV0L7G0ALr551EmNGeZsukCUy6tLDJUYEeuoUBgUkX1K5aRjEN4BXLZF/PjTXooSTOXKnAVxE5InwfO5ysQbEkyk63GzlmT7DLiwlAZoUM0zCNUtHlw2IAs2c1is=
   file: 
-  - termNote
-  - noted
+  - "./termNote"
+  - "./noted"
   draft: true
   on:
     repo: balsoft/termNote
