@@ -11,5 +11,6 @@ deploy:
   - "./termNote"
   - "./noted"
   draft: true
+  skip_cleanup: true
   on:
     repo: balsoft/termNote
