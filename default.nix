@@ -13,13 +13,13 @@ let
         (nix-bundle.appdir
         {
             name = "termNote";
-            target = termNote { test = false; stripAll = true; desktop = true; notify = false; };
+            target = termNote { desktop = true; notify = false; };
         });
         noted = nix-bundle.appimage
         (nix-bundle.appdir
         {
             name = "noted";
-            target = termNote { test = false; stripAll = true; desktop = true; desktopTarget = "noted"; };
+            target = termNote { desktop = true; desktopTarget = "noted"; };
         });
     };
     bundles =
@@ -27,15 +27,17 @@ let
         termNote = nix-bundle.nix-bootstrap
         {
             extraTargets = [];
-            target = termNote { test = false; stripAll = true; notify = false; };
+            target = termNote { notify = false; };
             run = "/bin/termNote";
+            nixUserChrootFlags = "-m /root:root";
         };
         noted = nix-bundle.nix-bootstrap
         {
             extraTargets = [];
-            target = termNote { test = false; stripAll = true; };
+            target = termNote {};
             run = "/bin/noted";
+            nixUserChrootFlags = "-m /root:root";
         };
     };
 in
-(termNote {}) // { inherit AppImages bundles; }
+(termNote { test = true; }) // { inherit AppImages bundles; }

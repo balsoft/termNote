@@ -1,7 +1,6 @@
 { stdenv, cmake, pkgconfig, lib,
   notify ? true, libnotify, gdk_pixbuf, pcre,
-  test ? true, catch2,
-  stripAll ? false,
+  test ? false, catch2,
   desktop ? false, desktopTarget ? "termNote", makeDesktopItem }:
 stdenv.mkDerivation rec
 {
@@ -11,7 +10,7 @@ stdenv.mkDerivation rec
   buildInputs = lib.optionals notify [ libnotify gdk_pixbuf pcre ];
   checkInputs = lib.optionals test [ catch2 ];
   doCheck = test;
-  stripAllList = lib.optionals stripAll [ "bin" ];
+  stripAllList = [ "bin" ];
   checkPhase = builtins.readFile ./test.sh;
   desktopItem = lib.optional desktop (makeDesktopItem
   {

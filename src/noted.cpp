@@ -31,8 +31,7 @@ int notifyOnDue(bool verbose) {
                         unit.tm_min = 0;
                     }
                     bool timeMatches = (
-                                        ((unit.tm_hour == -1) ||
-                                         unit.tm_hour == now->tm_hour) &&
+                                        ((unit.tm_hour == -1) || unit.tm_hour == now->tm_hour) &&
                                         unit.tm_min == now->tm_min
                                         );
                     
@@ -44,7 +43,7 @@ int notifyOnDue(bool verbose) {
                                         (
                                          (unit.tm_mday == -1 || unit.tm_mday == now->tm_mday) &&
                                          (unit.tm_wday == -1 || unit.tm_wday == now->tm_wday)
-                                        )
+                                         )
                                         );
                     
                     if (verbose) std::cout << "Match: T" << timeMatches << "D" << dateMatches << std::endl;
@@ -62,7 +61,7 @@ int notifyOnDue(bool verbose) {
             }
             if (doNotify) {
                 NotifyNotification* notif = notify_notification_new (NOTE_DUE, n.description.c_str(), 0);
-                notify_notification_set_timeout(notif, 10000); // 10 seconds
+                notify_notification_set_timeout(notif, 60000); // 10 seconds
                 if (!notify_notification_show(notif, 0)) {
                     std::cerr << "show has failed" << std::endl;
                     return -1;

@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN
 #include <catch2/catch.hpp>
-#include <../include/note.hpp>
+#include "../include/note.hpp"
 
 TEST_CASE( "todo.txt format is parsed", "[todoTxtNote]" ) {
     SECTION( "Full form is parsed" ) {

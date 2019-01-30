@@ -22,7 +22,6 @@ tm * todoTxtNote::parseTime(std::string s, const char *format) {
 }
 
 std::vector< std::vector<tm> > todoTxtNote::getNotificationSpecs() {
-    int i = 0;
     std::vector<std::vector<struct tm>> specs;
     std::vector<tm> spec;
     for (auto & w: words) {
